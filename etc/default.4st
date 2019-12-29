@@ -3,8 +3,10 @@
   <Style name="Table.puzzle">
      <StyleAttribute name="headerHidden" value="yes" />
      <StyleAttribute name="fontFamily" value="fixed" />
-     <StyleAttribute name="fontSize" value="1.5em" />
      <StyleAttribute name="showGrid" value="yes" />
+  </Style>
+  <Style name=".big">
+     <StyleAttribute name="fontSize" value="1.5em" />
   </Style>
   <Style name="Window">
      <StyleAttribute name="windowType" value="normal" />

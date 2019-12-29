@@ -44,12 +44,13 @@ DEFINE m_freq DYNAMIC ARRAY OF RECORD
 	num SMALLINT,
 	freq SMALLINT
 END RECORD
+DEFINE m_got CHAR(26)
 MAIN
 	DEFINE x SMALLINT
 	FOR x = 1 TO 26
 		LET m_numbers[x] = x
 		LET m_freq[x].num = x
-		LET m_freq[x].freq = 0
+		LET m_freq[x].freq = 0 
 	END FOR
 	CALL setPuzzle( "10 15 14 10 22 19 ## 21 09 15 26 17 05 09 04" )
 	CALL setPuzzle( "03 ## ## 03 ## 17 ## 22 ## ## 12 ## 15 ## 17" )
@@ -57,7 +58,7 @@ MAIN
 	CALL setPuzzle( "05 ## ## 10 ## 23 ## 24 ## ## 15 ## 21 ## 03" )
 	CALL setPuzzle( "## ## 18 14 13 12 ## 14 15 16 09 04 17 19 24" )
 	CALL setPuzzle( "18 ## ## 07 ## ## ## 04 ## 09 ## ## 19 ## ##" )
-	CALL setPuzzle( "12 21 06 09 19 19 08 ## 19 22 06 18 23 10 24" )
+	CALL setPuzzle( "12 21 06 09 19 19 08 ## 19 22 06 18 12 10 24" )
 	CALL setPuzzle( "12 ## ## 24 ## 25 ## ## ## 16 ## 12 ## ## 17" )
 	CALL setPuzzle( "15 14 19 12 06 22 11 ## 19 12 09 20 12 12 11" )
 	CALL setPuzzle( "## ## 17 ## ## 09 ## 19 ## ## ## 12 ## ## 08" )
@@ -125,6 +126,15 @@ FUNCTION setArrays()
 			END CASE
 		END FOR
 	END FOR
+	FOR x = 1 TO 26
+		LET m_got[x] = ASCII(96+x)
+		FOR y = 1 TO 26
+			IF m_decode[y] =  UPSHIFT( m_got[x] ) THEN
+				LET m_got[x] = UPSHIFT( m_got[x] )
+			END IF
+		END FOR
+	END FOR
+	DISPLAY BY NAME m_got
 	DISPLAY ARRAY m_puzzle3 TO puzzle.*
 		BEFORE DISPLAY
 			CALL dialog.setCellAttributes( m_puzzleColors )

@@ -26,6 +26,7 @@ GRID
  [b |b |b |b |b |b |b |b |b |b |b |b |b ]
  [a |a |a |a |a |a |a |a |a |a |a |a |a ]
  [b |b |b |b |b |b |b |b |b |b |b |b |b ]
+ [got                                   ]
 }
 END -- GRID
 TABLE
@@ -58,7 +59,7 @@ TABLE
 END -- TABLE
 END -- HBOX
 ATTRIBUTES
-TABLE puzzle : puzzle, WANTFIXEDPAGESIZE, HEIGHT = 16 LINES, STYLE="puzzle", FONTPITCH=FIXED;
+TABLE puzzle : puzzle, WANTFIXEDPAGESIZE, HEIGHT = 16 LINES, STYLE="puzzle big", FONTPITCH=FIXED;
 a1 = FORMONLY.c01, SAMPLE="1";
 b1 = FORMONLY.c02, SAMPLE="1";
 c1 = FORMONLY.c03, SAMPLE="1";
@@ -80,6 +81,7 @@ b = FORMONLY.alphabet, SAMPLE="1", AUTONEXT, UPSHIFT;
 
 c = FORMONLY.letter,TITLE="Num";
 d = FORMONLY.freq,TITLE="Freq";
+got = FORMONLY.m_got, STYLE="big";
 
 INSTRUCTIONS
 SCREEN RECORD puzzle ( FORMONLY.c01 THRU FORMONLY.c15 )
