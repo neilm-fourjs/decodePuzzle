@@ -1,0 +1,88 @@
+
+LAYOUT (TEXT="Puzzle")
+HBOX
+GRID
+{
+<T puzzle                                      >
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+ [a1|b1|c1|d1|e1|f1|g1|h1|i1|j1|k1|l1|m1|n1|o1]
+<                                              >
+------------------------------------------------
+ [a |a |a |a |a |a |a |a |a |a |a |a |a ]
+ [b |b |b |b |b |b |b |b |b |b |b |b |b ]
+ [a |a |a |a |a |a |a |a |a |a |a |a |a ]
+ [b |b |b |b |b |b |b |b |b |b |b |b |b ]
+}
+END -- GRID
+TABLE
+{
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+[c |d ]
+}
+END -- TABLE
+END -- HBOX
+ATTRIBUTES
+TABLE puzzle : puzzle, WANTFIXEDPAGESIZE, HEIGHT = 16 LINES, STYLE="puzzle", FONTPITCH=FIXED;
+a1 = FORMONLY.c01, SAMPLE="1";
+b1 = FORMONLY.c02, SAMPLE="1";
+c1 = FORMONLY.c03, SAMPLE="1";
+d1 = FORMONLY.c04, SAMPLE="1";
+e1 = FORMONLY.c05, SAMPLE="1";
+f1 = FORMONLY.c06, SAMPLE="1";
+g1 = FORMONLY.c07, SAMPLE="1";
+h1 = FORMONLY.c08, SAMPLE="1";
+i1 = FORMONLY.c09, SAMPLE="1";
+j1 = FORMONLY.c10, SAMPLE="1";
+k1 = FORMONLY.c11, SAMPLE="1";
+l1 = FORMONLY.c12, SAMPLE="1";
+m1 = FORMONLY.c13, SAMPLE="1";
+n1 = FORMONLY.c14, SAMPLE="1";
+o1 = FORMONLY.c15, SAMPLE="1";
+
+a = FORMONLY.numbers, SAMPLE="1";
+b = FORMONLY.alphabet, SAMPLE="1", AUTONEXT, UPSHIFT;
+
+c = FORMONLY.letter,TITLE="Num";
+d = FORMONLY.freq,TITLE="Freq";
+
+INSTRUCTIONS
+SCREEN RECORD puzzle ( FORMONLY.c01 THRU FORMONLY.c15 )
+SCREEN RECORD numbers ( FORMONLY.numbers )
+SCREEN RECORD alphabet ( FORMONLY.alphabet )
+SCREEN RECORD freq ( FORMONLY.letter, FORMONLY.freq )
